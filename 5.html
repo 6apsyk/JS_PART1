@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        function adding(a, b) {
+            return a + b;
+        }
+        function subtracting(a, b) {
+            return a - b;
+        }
+        function division(a, b) {
+            return a / b;
+        }
+        function multiplication(a, b) {
+            return a * b;
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            let result;
+            switch (operation) {
+                case 'сложение':
+                    result = adding(arg1, arg2);
+                    break;
+
+                case 'вычитание':
+                    result = subtracting(arg1, arg2);
+                    break;
+
+                case 'умножение':
+                    result = multiplication(arg1, arg2);
+                    break;
+
+                case 'деление':
+                    result = division(arg1, arg2);
+                    break;
+
+                default:
+                    throw new Error('фукнция не выполнена');
+
+            }
+            if (Number.isInteger(result)) {
+                return result;
+            } else
+                return result.toFixed(2);
+        }
+
+        let answer = mathOperation(+prompt('Введите а'), +prompt('Введите b'),
+            prompt(" напишите вид операции: сложение, вычитание, умножение, деление"));
+        alert(answer);
+
+    </script>
+</body>
+
+</html>

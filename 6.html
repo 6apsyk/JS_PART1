@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        let a = prompt('введите сумму которую хотети положить на счёт');
+
+        let lastSimbol = a.substr(a.length - 1);
+        let prelastSimbol = a.charAt(a.length - 2);
+
+        if (((+(prelastSimbol + lastSimbol) >= 11) && (+(prelastSimbol + lastSimbol) <= 19)) && (a.length >= 2)) {
+            alert(`вы положили ${a} рублей`)
+        } else {
+            switch (lastSimbol) {
+                case '0':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    alert(`вы положили ${a} рублей`)
+                    break;
+
+                case '1':
+                    alert(`вы положили ${a} рубль`)
+                    break;
+
+                default:
+                    alert(`вы положили ${a} рубля`)
+            }
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
