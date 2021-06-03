@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        const post = {
+            author: 'John',
+            postID: 23,
+            comments: [
+                {
+                    userID: 10,
+                    userName: 'Alex',
+                    text: 'lorem ipsum',
+                    rating: {
+                        likes: 10,
+                        dislike: 2,
+                    }
+                },
+                {
+                    userID: 5,
+                    userName: 'Jane',
+                    text: 'lorem ipsum 2',
+                    rating: {
+                        likes: 3,
+                        dislike: 1,
+                    }
+                },
+            ],
+        }
+
+        console.log(post.author);
+        console.log(post.comments[0].rating['dislike']);
+        console.log(post.comments[1].userID);
+        console.log(post.comments[1].text);
+
+
+
+    </script>
+</body>
+
+</html>
