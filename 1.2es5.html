@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        //a)
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function (msg) {
+            this.text = msg;
+        }
+
+        let postOne = new Post("name", "fdsfds", new Date().getFullYear());
+        postOne.edit("qwerty");
+        console.log(postOne);
+
+        //b)
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlightes = function () {
+            this.highlighted = true;
+        }
+
+        let attache1 = new AttachedPost("name", "dsfd", new Date().getFullYear());
+        attache1.makeTextHighlightes();
+        attache1.edit("qwerty");
+        console.log(attache1);
+
+
+
+
+    </script>
+</body>
+
+</html>
